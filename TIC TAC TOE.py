@@ -5,6 +5,9 @@ def display(row1, row2, row3):
     print(row3)
 
 
+player1 = input("Player 1's name: ")
+player2 = input("Player 2's name: ")
+
 # the playing field
 test_row1 = [" ", " ", " "]
 test_row2 = [" ", " ", " "]
@@ -25,7 +28,7 @@ while play_again.upper() != "N":
     while True:
         while True:
             # player1's turn
-            position_player1 = input("Player 1: ")
+            position_player1 = input(f"{player1} : ")
             if position_player1.upper() == "TL":
                 if test_row1[0] == "X":
                     print("It's already X")
@@ -154,7 +157,7 @@ while play_again.upper() != "N":
                 test_row1[1] == "X" and test_row2[1] == "X" and test_row3[1] == "X") or (
                 test_row1[2] == "X" and test_row2[2] == "X" and test_row3[2] == "X") or (
                 test_row1[2] == "X" and test_row2[1] == "X" and test_row3[0] == "X"):
-            print("PLAYER1 WON")
+            print(f"{player1} WON")
             player1_wins += 1
             break
         # tie checker
@@ -180,7 +183,7 @@ while play_again.upper() != "N":
             pass
         # player2's turn
         while True:
-            position_player2 = input("Player 2: ")
+            position_player2 = input(f"{player2} : ")
             if position_player2.upper() == "TL":
                 if test_row1[0] == "X":
                     print("It's already X")
@@ -309,7 +312,7 @@ while play_again.upper() != "N":
                 test_row1[1] == "O" and test_row2[1] == "O" and test_row3[1] == "O") or (
                 test_row1[2] == "O" and test_row2[2] == "O" and test_row3[2] == "O") or (
                 test_row1[2] == "O" and test_row2[1] == "O" and test_row3[0] == "O"):
-            print("PLAYER2 WON")
+            print(f"{player2} WON")
             player2_wins += 1
             break
         # tie checker
@@ -333,9 +336,9 @@ while play_again.upper() != "N":
             break
         elif cnt != 45:
             pass
-    print(f"PLAYER1 won {player1_wins} times")
+    print(f"{player1} won {player1_wins} times")
     print(" ")
-    print(f"PLAYER2 won {player2_wins} times")
+    print(f"{player2} won {player2_wins} times")
     print(" ")
     while True:
         # play again?
@@ -355,15 +358,15 @@ while play_again.upper() != "N":
             break
         elif play_again.upper() == "N":
             print("FINAL RESULT:")
-            print(f"PLAYER1 won {player1_wins} times")
-            print(f"PLAYER2 won {player2_wins} times")
+            print(f"{player1} won {player1_wins} times")
+            print(f"{player2} won {player2_wins} times")
             print(" ")
             # Who is the winner?
             if player1_wins > player2_wins:
-                print("PLAYER1 is the winner")
+                print(f"{player1} is the winner")
                 break
             elif player2_wins > player1_wins:
-                print("PLAYER2 is the winner")
+                print(f"{player2} is the winner")
                 break
             else:
                 print("The points are equal there is no winner")
